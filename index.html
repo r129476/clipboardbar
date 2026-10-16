@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ClipboardBar：从达人合作中的重复复制粘贴需求出发，使用 AI 辅助编程完成的 macOS 菜单栏剪贴板工具。支持文字与图片历史、搜索、置顶和点击复制。">
+  <title>ClipboardBar 剪贴板｜荣海洋的产品实践</title>
+  <style>
+    :root{color-scheme:light;--ink:#202925;--muted:#626c66;--line:#dce3dc;--accent:#2f644e;--bg:#f6f7f1}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    a{color:var(--accent);text-underline-offset:4px}header,main,footer{max-width:1080px;margin:auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:14px}.brand{font-weight:700;font-size:19px;letter-spacing:-.4px}.owner{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center;padding:48px 0}.eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:1px}
+    h1{font-size:clamp(34px,5vw,58px);line-height:1.18;letter-spacing:-2px;margin:16px 0 24px}h2{font-size:23px;line-height:1.4;margin:0 0 16px}h3{font-size:16px;margin:0 0 8px}p{margin:0 0 18px}.lead{font-size:18px;color:var(--muted)}
+    .actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:28px 0 12px}.primary{display:inline-block;background:var(--accent);color:white;text-decoration:none;font-weight:600;border-radius:12px;padding:12px 20px}.primary:hover{background:#224b3a}.small{font-size:13px;color:var(--muted)}
+    figure{margin:0;text-align:center}.app-shot{display:block;width:min(100%,360px);height:auto;border-radius:20px;margin:auto;box-shadow:0 24px 60px #20362925;border:1px solid #ffffff70}figcaption{font-size:12px;color:var(--muted);margin-top:14px}
+    section{padding:32px 0;border-top:1px solid var(--line)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{background:white;border:1px solid var(--line);border-radius:16px;padding:22px}.feature p{font-size:14px;color:var(--muted);margin:0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.num{font-size:13px;color:var(--accent);font-weight:700}.steps p{font-size:14px;color:var(--muted)}.notes{max-width:800px;color:var(--muted);font-size:14px}.notes ul{padding-left:20px}footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-bottom:36px}
+    @media(max-width:700px){header,main,footer{padding-left:20px;padding-right:20px}.hero{grid-template-columns:1fr;gap:32px;padding:34px 0}.features,.steps{grid-template-columns:1fr;gap:12px}.owner{font-size:12px}.lead{font-size:16px}h1{letter-spacing:-1px}.app-shot{width:min(100%,320px)}}
+  </style>
+</head>
+<body>
+  <header><div class="brand">▣ ClipboardBar</div><div class="owner">荣海洋 · 产品实践</div></header>
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">macOS 菜单栏工具 · 个人开发演示版</div>
+        <h1>常用文字和图片，<br>找回，再次复制。</h1>
+        <p class="lead">在达人合作沟通中，我经常需要反复调用固定话术。因此借助 AI 编程制作了这个自用剪贴板工具，把分散的复制内容集中保存和查找。</p>
+        <div class="actions"><a class="primary" href="ClipboardBar-macOS-AppleSilicon.zip" download>下载 Mac 演示版 ↓</a><a href="#how">查看使用方式</a></div>
+        <p class="small">版本 1.0 · Apple 芯片（M 系列）· macOS 14 及以上</p>
+        <p class="small">本包是个人编译版本，尚未通过 Apple 公证。请先确认来源；如系统阻止打开，请按 macOS 提示处理。</p>
+      </div>
+      <figure><img class="app-shot" src="clipboardbar-demo.png" width="720" height="880" alt="ClipboardBar 实际界面，搜索作品演示后显示三条示例话术"><figcaption>真实 App 界面；内容为专门制作的展示示例。</figcaption></figure>
+    </div>
+    <section aria-labelledby="features"><h2 id="features">围绕重复操作，做几个实用功能</h2><div class="features">
+      <div class="feature"><h3>文字与图片历史</h3><p>自动记录复制过的文字与图片，点击记录即可重新复制，再到目标应用粘贴。</p></div>
+      <div class="feature"><h3>文字搜索与置顶</h3><p>按关键词查找文字历史，将常用内容置顶，减少来回查找固定话术的操作。</p></div>
+      <div class="feature"><h3>本地保存与去重</h3><p>历史保存在本机；支持去重、删除记录，清空普通历史时保留置顶内容。</p></div>
+    </div></section>
+    <section id="how"><h2>使用方式</h2><div class="steps">
+      <div><div class="num">01 / 打开应用</div><h3>解压，放入应用程序</h3><p>打开 ClipboardBar.app 后，点击 Mac 顶部菜单栏的剪贴板图标。</p></div>
+      <div><div class="num">02 / 复制素材</div><h3>按平时的方式复制</h3><p>复制文字或图片，应用会记录历史；可搜索文字并置顶常用条目。</p></div>
+      <div><div class="num">03 / 再次调用</div><h3>点击记录，然后粘贴</h3><p>点击需要的记录重新复制，到目标应用中按 ⌘V 粘贴。</p></div>
+    </div><p class="small"><a href="README.txt">下载使用说明</a></p></section>
+    <section><h2>这件作品的起点与现状</h2><div class="notes">
+      <p>起点是我在达人合作工作中遇到的重复复制粘贴问题。我从自己的工作流程出发，借助 AI 辅助编程完成可运行的 Mac 应用，并用于个人日常操作。</p>
+      <ul><li>当前为自用工具和作品演示，尚无外部用户规模或效率提升的统计数据。</li><li>安装包仅含应用及说明，不含我的剪贴板历史、工作话术或图片库。</li><li>此版本适用于 Apple 芯片的 Mac，暂不支持 Intel Mac 或 Windows。</li></ul>
+      <p><a href="https://r129476.github.io/caibao/">另一件作品：菜包｜今天吃什么 →</a></p>
+    </div></section>
+  </main>
+  <footer>ClipboardBar 1.0 · 个人产品实践 · 2026-10-16 发布</footer>
+</body>
+</html>
